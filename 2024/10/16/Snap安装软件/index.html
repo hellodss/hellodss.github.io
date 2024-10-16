@@ -1,0 +1,253 @@
+<!DOCTYPE html><html lang="chinese" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Snap 安装 Visual Studio Code | Dss个人空间</title><meta name="author" content="D ss"><meta name="copyright" content="D ss"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="使用 Snap 安装 Visual Studio Code 会占用额外的空间，与普通的安装有一些不同之处： Snap 安装的特点 空间占用：  额外空间：Snap 包通常包含所有必要的依赖项，这意味着它们可能比传统的 .deb 包更大。因为 Snap 包是自包含的，所有依赖项都包含在包中，以确保在任何系统上都能运行。 隔离性：Snap 包是隔离的，不会干扰系统中的其他软件包。这种隔离性是通过使用称">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Snap 安装 Visual Studio Code">
+<meta property="og:url" content="https://github.com/hellodss/2024/10/16/Snap%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6/index.html">
+<meta property="og:site_name" content="Dss个人空间">
+<meta property="og:description" content="使用 Snap 安装 Visual Studio Code 会占用额外的空间，与普通的安装有一些不同之处： Snap 安装的特点 空间占用：  额外空间：Snap 包通常包含所有必要的依赖项，这意味着它们可能比传统的 .deb 包更大。因为 Snap 包是自包含的，所有依赖项都包含在包中，以确保在任何系统上都能运行。 隔离性：Snap 包是隔离的，不会干扰系统中的其他软件包。这种隔离性是通过使用称">
+<meta property="og:locale">
+<meta property="og:image" content="https://github.com/hellodss/img/butterfly-icon.png">
+<meta property="article:published_time" content="2024-10-16T07:56:46.504Z">
+<meta property="article:modified_time" content="2024-10-16T07:59:30.550Z">
+<meta property="article:author" content="D ss">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/hellodss/img/butterfly-icon.png"><link rel="shortcut icon" href="/hellodss/img/favicon.png"><link rel="canonical" href="https://github.com/hellodss/2024/10/16/Snap%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/hellodss/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        if (name && globalFn[key][name]) return
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/hellodss/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Snap 安装 Visual Studio Code',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-10-16 15:59:30'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/hellodss/"><span class="site-name">Dss个人空间</span></a><a class="nav-page-title" href="/hellodss/"><span class="site-name">Snap 安装 Visual Studio Code</span></a></span><div id="menus"></div></nav><div id="post-info"><h1 class="post-title">Snap 安装 Visual Studio Code</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2024-10-16T07:56:46.504Z" title="Created 2024-10-16 15:56:46">2024-10-16</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2024-10-16T07:59:30.550Z" title="Updated 2024-10-16 15:59:30">2024-10-16</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>使用 Snap 安装 Visual Studio Code 会占用额外的空间，与普通的安装有一些不同之处：</p>
+<h3 id="Snap-安装的特点"><a href="#Snap-安装的特点" class="headerlink" title="Snap 安装的特点"></a>Snap 安装的特点</h3><ol>
+<li><p><strong>空间占用</strong>：</p>
+<ul>
+<li><strong>额外空间</strong>：Snap 包通常包含所有必要的依赖项，这意味着它们可能比传统的 <code>.deb</code> 包更大。因为 Snap 包是自包含的，所有依赖项都包含在包中，以确保在任何系统上都能运行。</li>
+<li><strong>隔离性</strong>：Snap 包是隔离的，不会干扰系统中的其他软件包。这种隔离性是通过使用称为“snapshots”的独立文件系统实现的，每个 Snap 包都有自己的文件系统。</li>
+</ul>
+</li>
+<li><p><strong>更新</strong>：</p>
+<ul>
+<li><strong>自动更新</strong>：Snap 包会自动更新到最新版本，而不会影响系统中的其他包。这对保持应用程序的最新版本和安全性很有帮助。</li>
+<li><strong>回滚功能</strong>：Snap 支持版本回滚功能，如果更新后遇到问题，可以轻松回滚到先前的版本。</li>
+</ul>
+</li>
+<li><p><strong>安装路径</strong>：</p>
+<ul>
+<li><strong>不同的文件系统路径</strong>：Snap 包安装在 <code>/snap</code> 目录下，而传统的 <code>.deb</code> 包安装在系统的根文件系统中。</li>
+</ul>
+</li>
+</ol>
+<h3 id="与普通安装的区别"><a href="#与普通安装的区别" class="headerlink" title="与普通安装的区别"></a>与普通安装的区别</h3><ol>
+<li><p><strong>依赖管理</strong>：</p>
+<ul>
+<li><strong>Snap</strong>：所有依赖项都打包在一起，不依赖于系统的共享库。这样可以避免依赖地狱（dependency hell），但会占用更多磁盘空间。</li>
+<li><strong>Deb</strong>：依赖系统的共享库，安装时可能需要下载并安装缺少的依赖项。空间占用更小，但需要解决依赖冲突。</li>
+</ul>
+</li>
+<li><p><strong>启动速度</strong>：</p>
+<ul>
+<li><strong>Snap</strong>：由于 Snap 包是自包含的，启动时可能稍慢，因为需要挂载 Snap 包的文件系统。</li>
+<li><strong>Deb</strong>：启动速度通常更快，因为依赖项已经在系统中，并且不需要挂载额外的文件系统。</li>
+</ul>
+</li>
+<li><p><strong>权限和安全性</strong>：</p>
+<ul>
+<li><strong>Snap</strong>：使用严格的权限和沙箱机制，增强了安全性和隔离性。</li>
+<li><strong>Deb</strong>：依赖于系统的权限和安全机制，权限更灵活，但也更容易受到系统的影响。</li>
+</ul>
+</li>
+</ol>
+<h3 id="安装-Snap-版本的-Visual-Studio-Code"><a href="#安装-Snap-版本的-Visual-Studio-Code" class="headerlink" title="安装 Snap 版本的 Visual Studio Code"></a>安装 Snap 版本的 Visual Studio Code</h3><p>如果你决定使用 Snap 安装 Visual Studio Code，可以使用以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt-get install snapd</span><br><span class="line"><span class="built_in">sudo</span> snap install --classic code</span><br></pre></td></tr></table></figure>
+
+<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>使用 Snap 安装 Visual Studio Code 会占用额外的空间，但它提供了更好的隔离性、安全性和自动更新功能。如果你的系统磁盘空间充足，使用 Snap 安装是一个方便且可靠的选择。</p>
+<p>要查看具体安装的 Snap 包占用的空间大小，你可以使用以下命令来查看 Snap 包的详细信息，包括它占用的磁盘空间：</p>
+<ol>
+<li><strong>查看 Snap 包信息</strong>：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">snap list --all</span><br></pre></td></tr></table></figure>
+
+<p>这条命令列出了所有已安装的 Snap 包及其版本和状态。</p>
+<ol start="2">
+<li><strong>查看单个 Snap 包的详细信息</strong>：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">snap info code</span><br></pre></td></tr></table></figure>
+
+<p>这条命令会显示 Visual Studio Code Snap 包的详细信息，包括它的大小。</p>
+<ol start="3">
+<li><strong>检查 Snap 包占用的磁盘空间</strong>：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> <span class="built_in">du</span> -sh /var/lib/snapd/snaps/code_*.snap</span><br></pre></td></tr></table></figure>
+
+<p>这条命令会显示 Visual Studio Code Snap 包文件的大小。</p>
+<ol start="4">
+<li><strong>查看所有 Snap 包占用的空间</strong>：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> <span class="built_in">du</span> -sh /var/lib/snapd/snaps/</span><br></pre></td></tr></table></figure>
+
+<p>这条命令会显示所有 Snap 包占用的总空间。</p>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>假设你已经安装了 Snap 包，可以按照以下步骤来查看它占用的空间：</p>
+<ol>
+<li>查看所有已安装的 Snap 包及其版本和状态：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">snap list --all</span><br></pre></td></tr></table></figure>
+
+<p>输出示例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Name               Version    Rev   Tracking       Publisher   Notes</span><br><span class="line">core               16-2.49.2  10908 latest/stable  canonical✓  core</span><br><span class="line">code               1.56.2     66    latest/stable  vscode✓     classic</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>查看 Visual Studio Code Snap 包的详细信息：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">snap info code</span><br></pre></td></tr></table></figure>
+
+<p>输出示例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">name:      code</span><br><span class="line">summary:   Code editing. Redefined.</span><br><span class="line">publisher: Visual Studio Code (vscode✓)</span><br><span class="line">contact:   https://github.com/Microsoft/vscode</span><br><span class="line">license:   proprietary</span><br><span class="line">description: |</span><br><span class="line">  Visual Studio Code is a lightweight but powerful source code editor which runs on your desktop and is available for</span><br><span class="line">  Windows, macOS and Linux. It comes with built-in support for JavaScript, TypeScript and Node.js and has a rich</span><br><span class="line">  ecosystem of extensions for other languages (such as C++, C#, Java, Python, PHP, Go) and runtimes (such as .NET and</span><br><span class="line">  Unity).</span><br><span class="line">commands:</span><br><span class="line">  - code</span><br><span class="line">snap-id:      Q2Qb2P7HDMhOBkYW9tyW3vPZdSI7jPY7</span><br><span class="line">tracking:     latest/stable</span><br><span class="line">refresh-date: today at 14:00 CST</span><br><span class="line">channels:</span><br><span class="line">  latest/stable:    1.56.2 2021-05-12 (66) 169MB classic</span><br><span class="line">  latest/candidate: 1.56.2 2021-05-12 (66) 169MB classic</span><br><span class="line">  latest/beta:      1.57.0 2021-05-21 (68) 169MB classic</span><br><span class="line">  latest/edge:      1.57.0 2021-05-21 (68) 169MB classic</span><br><span class="line">installed:          1.56.2            (66) 169MB classic</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>检查 Visual Studio Code Snap 包文件的大小：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> <span class="built_in">du</span> -sh /var/lib/snapd/snaps/code_*.snap</span><br></pre></td></tr></table></figure>
+
+<p>输出示例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">169M    /var/lib/snapd/snaps/code_66.snap</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>查看所有 Snap 包占用的总空间：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> <span class="built_in">du</span> -sh /var/lib/snapd/snaps/</span><br></pre></td></tr></table></figure>
+
+<p>输出示例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">500M    /var/lib/snapd/snaps/</span><br></pre></td></tr></table></figure>
+
+<p>这些命令可以帮助你查看具体 Snap 包和所有 Snap 包占用的空间大小。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="https://github.com/hellodss">D ss</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="https://github.com/hellodss/2024/10/16/Snap%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6/">https://github.com/hellodss/2024/10/16/Snap%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles on this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated.</span></div></div><div class="tag_share"><div class="post-share"><div class="social-share" data-image="/hellodss/img/butterfly-icon.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="prev-post pull-left" href="/hellodss/2024/10/16/ubuntu%E8%BF%9C%E7%A8%8B%E6%8C%82%E8%BD%BD%E6%96%87%E4%BB%B6%E5%A4%B9/" title="ubuntu 远程挂载文件夹"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Previous</div><div class="prev_info">ubuntu 远程挂载文件夹</div></div></a><a class="next-post pull-right" href="/hellodss/2024/10/16/hello-world/" title="Hello World"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Next</div><div class="next_info">Hello World</div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info is-center"><div class="avatar-img"><img src="/hellodss/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/hellodss/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">D ss</div><div class="author-info-description"></div><div class="site-data"><a href="/hellodss/archives/"><div class="headline">Articles</div><div class="length-num">5</div></a><a href="/hellodss/tags/"><div class="headline">Tags</div><div class="length-num">6</div></a><a href="/hellodss/categories/"><div class="headline">Categories</div><div class="length-num">2</div></a></div><a id="card-info-btn" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Snap-%E5%AE%89%E8%A3%85%E7%9A%84%E7%89%B9%E7%82%B9"><span class="toc-number">1.</span> <span class="toc-text">Snap 安装的特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8E%E6%99%AE%E9%80%9A%E5%AE%89%E8%A3%85%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">2.</span> <span class="toc-text">与普通安装的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-Snap-%E7%89%88%E6%9C%AC%E7%9A%84-Visual-Studio-Code"><span class="toc-number">3.</span> <span class="toc-text">安装 Snap 版本的 Visual Studio Code</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="toc-number">4.</span> <span class="toc-text">结论</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B"><span class="toc-number">5.</span> <span class="toc-text">示例</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/hellodss/2024/10/16/ubuntu%E8%BF%9C%E7%A8%8B%E6%8C%82%E8%BD%BD%E6%96%87%E4%BB%B6%E5%A4%B9/" title="ubuntu 远程挂载文件夹">ubuntu 远程挂载文件夹</a><time datetime="2024-10-16T07:56:46.518Z" title="Created 2024-10-16 15:56:46">2024-10-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/hellodss/2024/10/16/Snap%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6/" title="Snap 安装 Visual Studio Code">Snap 安装 Visual Studio Code</a><time datetime="2024-10-16T07:56:46.504Z" title="Created 2024-10-16 15:56:46">2024-10-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/hellodss/2024/10/16/hello-world/" title="Hello World">Hello World</a><time datetime="2024-10-16T07:17:01.899Z" title="Created 2024-10-16 15:17:01">2024-10-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/hellodss/2024/10/15/husky%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E8%9E%8D%E5%90%88gps%E4%BF%A1%E6%81%AF%E7%9A%84%E5%AE%A4%E5%A4%96%E5%AF%BC%E8%88%AA/" title="husky机器人仿真环境下 ubuntu18.04实现融合GPS数据的室外导航">husky机器人仿真环境下 ubuntu18.04实现融合GPS数据的室外导航</a><time datetime="2024-10-15T08:00:00.000Z" title="Created 2024-10-15 16:00:00">2024-10-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/hellodss/2024/10/10/Ros_Action/" title="ROS Action通信自定义action文件">ROS Action通信自定义action文件</a><time datetime="2024-10-10T02:10:10.000Z" title="Created 2024-10-10 10:10:10">2024-10-10</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2024 By D ss</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Reading Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/hellodss/js/utils.js"></script><script src="/hellodss/js/main.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
